@@ -19,10 +19,7 @@ function handleGuess(guess) {
     // (You also need to implement the score function)
 
     const result = score(guess, spot);
-
-    // If the result is 1 (win), increase wins state
-    // Increase total state 
-    // ***
+    
     if (result) {
         wins++;
     }
