@@ -39,8 +39,6 @@ function handleGuess(guess) {
     // update the view
     displayResults();
     displayHidingSpots();
-    // if (guessed === tree)
-    // return treeButton.classList.add('guessed);
 }
 
 // Hiding Spots Component
@@ -72,12 +70,21 @@ function displayHidingSpots() {
         boulderButton.classList.add('face');
     }
 
+
     // *** Implement adding the guessed ***
     // Similar to adding face class, conditionally
     // add the 'guessed' class if the guessed state
     // matches for tree, shed, or boulder
     // ***
-
+    if (guessed === 'tree') {
+        treeButton.classList.add('guessed');
+    }
+    if (guessed === 'shed') {
+        shedButton.classList.add('guessed');
+    }
+    if (guessed === 'boulder') {
+        boulderButton.classList.add('guessed');
+    }
 
     // Clear the face and guessed classes after two seconds
     // store the timeout so we can clear if user makes
