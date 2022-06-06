@@ -5,6 +5,7 @@ import { getRandomItem, score } from './utils.js';
 const spots = ['tree', 'boulder', 'shed'];
 let total = 0;
 let wins = 0;
+let losses = 0;
 let spot = '';
 let guessed = '';
 let timeout = 0;
@@ -25,8 +26,10 @@ function handleGuess(guess) {
     if (result) {
         wins++;
     }
+    else {
+        losses++;
+    }
     total++;
-    console.log(wins, total);
     // Store the guess so we can apply special background
     guessed = guess;
     // Clear the timeout, in case user is clicking again before
@@ -98,13 +101,21 @@ shedButton.addEventListener('click', () => {
 // Results Component
 
 // *** Implement the Results Component! ***
+
+const winsDisplay = document.getElementById('wins-display');
+const lossesDisplay = document.getElementById('losses-display');
+const totalDisplay = document.getElementById('total-display');
+
 // 1. Reference needed DOM elements
 // 2. Implement the displayResults function that updates
 //    the component total, winds, and losses
 //    (derive losses from totals and wins)
 // ***
 function displayResults() {
-
+    winsDisplay.textContent = wins;
+    lossesDisplay.textContent = losses;
+    totalDisplay.textContent = total;
+    console.log(wins, losses, total);
 }
 
 
