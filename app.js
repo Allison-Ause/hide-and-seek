@@ -9,15 +9,24 @@ let spot = '';
 let guessed = '';
 let timeout = 0;
 
+
 function handleGuess(guess) {
     // *** Implement Missing Functionality ***
     // Generate a random spot based on spots array
+    spot = getRandomItem(spots); 
     // Use the score function to get a result for guess and actual spot
     // (You also need to implement the score function)
+
+    const result = score(guess, spot);
+
     // If the result is 1 (win), increase wins state
     // Increase total state 
     // ***
-
+    if (result) {
+        wins++;
+    }
+    total++;
+    console.log(wins, total);
     // Store the guess so we can apply special background
     guessed = guess;
     // Clear the timeout, in case user is clicking again before
@@ -27,12 +36,16 @@ function handleGuess(guess) {
     // update the view
     displayResults();
     displayHidingSpots();
+    // if (guessed === tree)
+    // return treeButton.classList.add('guessed);
 }
 
 // Hiding Spots Component
 const shedButton = document.getElementById('shed-button');
 const treeButton = document.getElementById('tree-button');
 const boulderButton = document.getElementById('boulder-button');
+
+
 
 function resetClasses() {
     // reset face and guess classes
