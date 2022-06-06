@@ -115,7 +115,6 @@ function displayResults() {
     winsDisplay.textContent = wins;
     lossesDisplay.textContent = losses;
     totalDisplay.textContent = total;
-    console.log(wins, losses, total);
 }
 
 
